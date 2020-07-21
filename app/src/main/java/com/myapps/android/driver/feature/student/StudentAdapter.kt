@@ -7,16 +7,29 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.myapps.android.driver.R
 import com.myapps.android.driver.data.StudentItem
 import kotlinx.android.synthetic.main.text_item_view.view.*
 
+class StudentDiffCallBack: DiffUtil.ItemCallback<StudentItem>() {
+    override fun areItemsTheSame(oldItem: StudentItem, newItem: StudentItem): Boolean {
+        return oldItem.text == newItem.text
+    }
+
+    override fun areContentsTheSame(oldItem: StudentItem, newItem: StudentItem): Boolean {
+        return oldItem == newItem
+    }
+
+}
+
 class StudentAdapter(
     private val studentList: List<StudentItem>,
     private val listener: OnItemClickListener
 ) :
-    RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
+    ListAdapter<StudentItem, StudentAdapter.StudentViewHolder>(StudentDiffCallBack()) {
 
     inner class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {

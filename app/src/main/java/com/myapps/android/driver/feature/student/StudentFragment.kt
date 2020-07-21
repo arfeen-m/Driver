@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.student_fragment.*
 
 class StudentFragment : Fragment(R.layout.student_fragment), StudentAdapter.OnItemClickListener {
 
-    private  lateinit var binding: StudentFragmentBinding
-
     private lateinit var viewModelFactory: StudentViewModelFactory
     private lateinit var viewModel: StudentViewModel
 
