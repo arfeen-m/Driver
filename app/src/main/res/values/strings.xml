@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Driver</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_details_fragment">Hello profile details fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="profile_details_button">Profile Details Button</string>
+    <string name="students_button">Students Button</string>
+</resources>
