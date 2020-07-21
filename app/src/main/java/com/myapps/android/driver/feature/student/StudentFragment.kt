@@ -20,8 +20,6 @@ class StudentFragment : Fragment(R.layout.student_fragment), StudentAdapter.OnIt
     private lateinit var viewModelFactory: StudentViewModelFactory
     private lateinit var viewModel: StudentViewModel
 
-    private lateinit var studentList: List<StudentItem>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,24 +31,13 @@ class StudentFragment : Fragment(R.layout.student_fragment), StudentAdapter.OnIt
 
         Log.i("StudentFragment", "Called ViewModelProviders.of")
 
-        //provide this with vmfactory
         viewModelFactory = StudentViewModelFactory(5)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(StudentViewModel::class.java)
 
 
-        //How can i incorporate viewmodel with this data?
-
-        studentList = generateDummyList(200)
-
         val adapter =
-            StudentAdapter(studentList, this)
+            StudentAdapter(viewModel.studentList, this)
         students_list.adapter = adapter
-
-
-        //student_list.layoutManager = LinearLayoutManager(context)
-
-
-
 
     }
 
@@ -58,16 +45,6 @@ class StudentFragment : Fragment(R.layout.student_fragment), StudentAdapter.OnIt
         Toast.makeText(context,"Item $position clicked", Toast.LENGTH_SHORT).show()
     }
 
-    private fun generateDummyList(size : Int) : List<StudentItem> {
 
-        val list = ArrayList<StudentItem>()
-
-        for(i in 0 until size) {
-            val item = StudentItem("Item $i")
-            list += item
-        }
-
-        return list
-    }
 
 }

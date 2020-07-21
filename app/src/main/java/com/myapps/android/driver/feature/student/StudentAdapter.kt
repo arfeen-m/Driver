@@ -36,7 +36,7 @@ class StudentAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
 
-        var itemView = LayoutInflater.from(parent.context).inflate(
+        val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.text_item_view,
             parent, false
         )
@@ -60,42 +60,3 @@ class StudentAdapter(
     }
 
 }
-
-//class StudentListener() {
-//    fun onClick() {
-//
-//    }
-//}
-
-//class StudentAdapter : RecyclerView.Adapter<TextItemViewHolder>() {
-//
-//
-//    //private lateinit var data: MutableList<String>
-//
-//    private var data = mutableListOf(  "John",
-//        "Abe",
-//        "Tom",
-//        "Kent",
-//        "Cristiano",
-//        "Messi",
-//        "Neymar",
-//        "Bale",
-//        "Suarez"
-//    )
-//
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
-//        val layoutInflater = LayoutInflater.from(parent.context)
-//        val view = layoutInflater
-//            .inflate(R.layout.text_item_view, parent, false) as TextView
-//        return TextItemViewHolder(view)
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return data.size
-//    }
-//
-//    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
-//        val item = data
-//    }
-//}
