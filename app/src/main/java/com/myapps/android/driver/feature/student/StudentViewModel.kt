@@ -4,8 +4,9 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.myapps.android.driver.data.StudentItem
 import com.myapps.android.driver.repository.StudentRepository
+import javax.inject.Inject
 
-class StudentViewModel(numberOfStudents: Int) : ViewModel() {
+class StudentViewModel @Inject constructor(numberOfStudents: Int) : ViewModel() {
 
     private val studentRepository = StudentRepository()
     var studentList: List<StudentItem>

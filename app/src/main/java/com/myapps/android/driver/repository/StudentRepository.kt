@@ -9,7 +9,7 @@ class StudentRepository {
         val list = ArrayList<StudentItem>()
 
         for(i in 1..size) {
-            val item = StudentItem("Item $i")
+            val item = StudentItem("Student $i")
             list += item
         }
 

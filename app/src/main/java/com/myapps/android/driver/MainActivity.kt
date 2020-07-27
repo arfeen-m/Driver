@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity  : AppCompatActivity() {
 
     var isProfileFragment = true
     private val manager = supportFragmentManager
